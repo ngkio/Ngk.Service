@@ -1,0 +1,72 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+        <DocumentationFile>bin\Debug\netcoreapp2.1\Ngk.Service.xml</DocumentationFile>
+        <NoWarn>1701;1702;1591</NoWarn>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+        <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+        <NoWarn>1701;1702;1591</NoWarn>
+        <DocumentationFile>bin\Release\netcoreapp2.1\Ngk.Service.xml</DocumentationFile>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <Compile Remove="Log\**" />
+        <Content Remove="Log\**" />
+        <EmbeddedResource Remove="Log\**" />
+        <None Remove="Log\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Thor.Framework.Common" Version="1.0.5.2" />
+        <PackageReference Include="Thor.Framework.Data" Version="1.0.0" />
+        <PackageReference Include="Thor.Framework.Data.Model" Version="1.1.4" />
+        <PackageReference Include="Thor.Framework.Service.WebApi" Version="1.0.1.2" />
+        <PackageReference Include="IdentityModel" Version="3.10.5" />
+        <PackageReference Include="Microsoft.AspNetCore.App" Version="2.1.2" />
+        <PackageReference Include="AspectCore.Extensions.Autofac" Version="0.7.0" />
+        <PackageReference Include="AspectCore.Extensions.DependencyInjection" Version="0.7.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.1.1" />
+        <PackageReference Include="Microsoft.AspNetCore.Session" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Memory" Version="2.1.1" />
+        <PackageReference Include="Microsoft.Extensions.Caching.Redis" Version="2.1.2" />
+        <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
+        <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.1.4" />
+        <PackageReference Include="Quartz" Version="3.0.7" />
+        <PackageReference Include="Quartz.Serialization.Json" Version="3.0.7" />
+        <PackageReference Include="Z.EntityFramework.Plus.EFCore" Version="1.10.0" />
+        <PackageReference Include="Consul" Version="0.7.2.6" />
+        <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="2.7.0" />
+        <PackageReference Include="WebApiClient.JIT" Version="1.0.4" />
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="4.0.1" />
+        <PackageReference Include="log4stash" Version="2.2.1" />
+    </ItemGroup>
+    
+    <ItemGroup>
+        <Content Include="..\..\Prod\WebApi\appsettings.Production.json">
+            <Link>appsettings.Production.json</Link>
+            <CopyToPublishDirectory>always</CopyToPublishDirectory>
+        </Content>
+
+      <Content Include="..\..\Prod\WebApi\docker-compose-production.yml">
+            <Link>docker-compose-production.yml</Link>
+            <CopyToPublishDirectory>always</CopyToPublishDirectory>
+        </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\Business\Ngk.Business.Implement\Ngk.Business.Implement.csproj" />
+        <ProjectReference Include="..\..\Business\Ngk.Business.Interface\Ngk.Business.Interface.csproj" />
+        <ProjectReference Include="..\..\Contract\Contract.Implement.Ngk\Contract.Implement.Ngk.csproj" />
+        <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.DTO\Ngk.DataAccess.DTO.csproj" />
+        <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.Entities\Ngk.DataAccess.Entities.csproj" />
+    </ItemGroup>
+
+    <ProjectExtensions><VisualStudio><UserProperties appsettings_1Development_1json__JSONSchema="" __JSONSchema="" /></VisualStudio></ProjectExtensions>
+</Project>

@@ -1,0 +1,44 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <DocumentationFile>bin\Debug\netcoreapp2.1\Ngk.DataAccess.DTO.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <NoWarn>1701;1702;1591</NoWarn>
+    <DocumentationFile>bin\Release\netcoreapp2.1\Ngk.DataAccess.DTO.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Manage\**" />
+    <EmbeddedResource Remove="Manage\**" />
+    <None Remove="Manage\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="SmsLogModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Thor.Framework.Common" Version="1.0.5.2" />
+    <PackageReference Include="Thor.Framework.Data" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Ngk.Common\Ngk.Common.csproj" />
+    <ProjectReference Include="..\Ngk.DataAccess.Entities\Ngk.DataAccess.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netcoreapp2.1</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Thor.Ext.CryptoTool.Lib" Version="1.0.0" />
+        <PackageReference Include="Thor.Framework.Data.Model" Version="1.1.4" />
+        <PackageReference Include="Thor.Framework.Ext.NGKSharp" Version="1.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.DTO\Ngk.DataAccess.DTO.csproj" />
+      <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.Interface\Ngk.DataAccess.Interface.csproj" />
+      <ProjectReference Include="..\Contract.Interface\Contract.Interface.csproj" />
+    </ItemGroup>
+</Project>

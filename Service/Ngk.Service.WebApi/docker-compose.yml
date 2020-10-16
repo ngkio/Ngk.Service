@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  ngkservicewebapi:
+    build:
+      context: ../../
+      dockerfile: Service/Ngk.Service.WebApi/Dockerfile
+    restart: always

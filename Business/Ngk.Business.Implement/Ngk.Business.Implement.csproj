@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Ngk\**" />
+    <EmbeddedResource Remove="Ngk\**" />
+    <None Remove="Ngk\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NgkService.External.WebApi" Version="1.0.1" />
+    <PackageReference Include="Thor.Framework.Business.Mongo" Version="1.1.4" />
+    <PackageReference Include="Thor.Framework.Business.Relational" Version="1.1.4" />
+    <PackageReference Include="Thor.Framework.Common.TOTP" Version="1.0.0" />
+    <PackageReference Include="Thor.Framework.Data.Model" Version="1.1.4" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="2.1.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="YunPian.NetCore" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Ngk.Common\Ngk.Common.csproj" />
+    <ProjectReference Include="..\..\Contract\Contract.Interface\Contract.Interface.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.DTO\Ngk.DataAccess.DTO.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.Entities\Ngk.DataAccess.Entities.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.Implement\Ngk.DataAccess.Implement.csproj" />
+    <ProjectReference Include="..\..\DataAccess\Ngk.DataAccess.Interface\Ngk.DataAccess.Interface.csproj" />
+    <ProjectReference Include="..\..\Business\Ngk.Business.Interface\Ngk.Business.Interface.csproj" />
+  </ItemGroup>
+
+</Project>

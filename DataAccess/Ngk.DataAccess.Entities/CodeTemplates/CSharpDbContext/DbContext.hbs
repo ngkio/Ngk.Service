@@ -1,0 +1,17 @@
+﻿{{> dbimports}}
+
+namespace {{namespace}}
+{
+    public partial class {{class}}
+    {
+{{> dbsets}}
+{{#if entity-type-errors}}
+{{#each entity-type-errors}}
+{{spaces 8}}{{{entity-type-error}}}
+{{/each}}
+
+{{/if}}
+
+{{{on-model-creating}}}
+    }
+}

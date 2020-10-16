@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Thor.Framework.Repository.Mongo" Version="1.1.1" />
+    <PackageReference Include="Thor.Framework.Repository.Relational" Version="1.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ngk.DataAccess.DTO\Ngk.DataAccess.DTO.csproj" />
+    <ProjectReference Include="..\Ngk.DataAccess.Entities\Ngk.DataAccess.Entities.csproj" />
+  </ItemGroup>
+
+</Project>

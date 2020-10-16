@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Entities\**" />
+    <EmbeddedResource Remove="Entities\**" />
+    <None Remove="Entities\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Extention\SmsSendRecordExtentions.cs" />
+    <Compile Remove="Mongo\SmsSendsRecord.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFrameworkCore.Scaffolding.Handlebars" Version="1.5.1" />
+    <PackageReference Include="Thor.Framework.Data.DbContext.Mongo" Version="1.0.1" />
+    <PackageReference Include="Thor.Framework.Data.DbContext.Relational" Version="1.0.2" />
+    <PackageReference Include="Thor.Framework.Data.Model.Mongo" Version="1.0.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.1.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="2.0.1" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql.Design" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Ngk.Common\Ngk.Common.csproj" />
+  </ItemGroup>
+</Project>
